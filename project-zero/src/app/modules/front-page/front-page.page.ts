@@ -1,7 +1,6 @@
-import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
-import { Observable, interval, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 
-import { take } from 'rxjs/operators';
+import { TypewriterService } from './typewriter-service/typewriter-service.service';
 
 @Component({
   selector: 'app-front-page',
@@ -9,28 +8,21 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./front-page.page.scss'],
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FrontPageComponent implements AfterViewInit, OnDestroy {
+export class FrontPageComponent {
 
-  content = 'Test content';
-  currentContent = '';
-  intervalObservable = new Observable;
+  content = `Hello, there!
 
-  takeFourNumbers: Observable<number>;
-  numberSub: Subscription;
+  My name is Alex. I\'m a Front End Developer. Basically, everything you can see and interact with on the Internet was made by someone like me.
 
-  constructor(
-  ) { }
+  The point of this website is to show potential employers that I know how to do this job. Feel free to ask me any questions!
 
-  ngAfterViewInit(): void {
-    const numbers = interval(100);
-    this.takeFourNumbers = numbers.pipe(take(this.content.length));
-    this.numberSub = this.takeFourNumbers.subscribe(x => {
-      this.currentContent += this.content[x];
-    });
-  }
+  This website was built with Angular 9. It provides an example case for lazy-loading, the router, services, subscriptions with RxJS, API integrations, and data binding.
 
-  ngOnDestroy(): void {
-    this.numberSub.unsubscribe();
+  Also, please appreciate the pleasing CSS effects. Pretty nice eh?`;
+  textSub = [];
+
+  constructor(private _typewriterService: TypewriterService) {
+    this.textSub = this._typewriterService.getTextSub(this.content);
   }
 
 }
