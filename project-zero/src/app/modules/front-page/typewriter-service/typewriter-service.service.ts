@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { interval } from 'rxjs';
+import { interval, Observable } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 
 @Injectable({
@@ -9,8 +9,8 @@ export class TypewriterService {
 
   constructor() { }
 
-  getTextSub(content): any {
-    const timePerLetter = interval(50);
+  getTextSub(content): Observable<number> {
+    const timePerLetter = interval(25);
     return timePerLetter.pipe(take(content.length)).pipe(map((index) => {
       return content.slice(0, index + 1);
     }));

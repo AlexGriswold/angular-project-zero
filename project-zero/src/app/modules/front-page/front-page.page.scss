@@ -1,6 +1,6 @@
 h1, p {
     margin: 0;
-    color: #d4d4d4;
+    // color: #d4d4d4;
     font-family: sans-serif;
     line-height: 1.4;
 }
@@ -8,6 +8,10 @@ h1, p {
 p {
     width: 530px;
     margin: 20px 0;
+    color: #dfdfdf;
+    &:hover {
+        animation: colorchange 1s linear infinite;
+    }
 }
 
 .app-front-page__main-container {
@@ -16,4 +20,11 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@keyframes colorchange {
+    0%   {color: cyan;}
+    33%  {color: magenta;}
+    66%  {color: yellow;}
+    100% {color: cyan;}
 }

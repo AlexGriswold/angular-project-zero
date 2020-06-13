@@ -1,0 +1,17 @@
+a {
+    color: #d4d4d4;
+}
+
+ul {
+    // display: inline;
+    margin: 0;
+    padding: 20px 0;
+    &:first-child {
+        padding-left: 20px;
+    }
+}
+
+ul li {
+    display: inline;
+    padding: 10px;
+}
