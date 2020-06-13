@@ -10,9 +10,10 @@ export class TypewriterService {
   constructor() { }
 
   getTextSub(content): Observable<number> {
+    // Should return one letter at a time.
     const timePerLetter = interval(25);
     return timePerLetter.pipe(take(content.length)).pipe(map((index) => {
-      return content.slice(0, index + 1);
+      return content.slice(index, index + 1);
     }));
   }
 

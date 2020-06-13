@@ -11,6 +11,7 @@ import { TypewriterService } from './typewriter-service/typewriter-service.servi
 export class FrontPageComponent {
 
   textSub;
+  textArray = [];
   content = `Hello, there!
 
   My name is Alex. I\'m a Front End Developer. Basically, everything you can see and interact with on the Internet was made by someone like me.
@@ -20,7 +21,9 @@ export class FrontPageComponent {
   This website was built with Angular 9. It provides an example case for lazy-loading, the router, services, subscriptions with RxJS, API integrations, and data binding.`;
 
   constructor(private _typewriterService: TypewriterService) {
-    this.textSub = this._typewriterService.getTextSub(this.content);
+    this.textSub = this._typewriterService.getTextSub(this.content).subscribe((data) => {
+      this.textArray.push(data);
+    });
   }
 
 }

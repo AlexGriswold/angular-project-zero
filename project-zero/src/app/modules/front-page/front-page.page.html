@@ -1,3 +1,10 @@
 <div class="app-front-page__main-container">
-    <p style="white-space: pre-line;">{{ textSub | async }}</p>
+    <!-- <h1>Hello, there!</h1>
+    <p>My name is Alex. I'm a Front End Developer. Basically, everything you can see and interact with on the Internet was made by someone like me.</p>
+    <p>The point of this website is to show potential employers that I know how to do this job. Feel free to ask me any questions!</p>
+    <p>This website was built with Angular 9. It provides an example case for lazy-loading, the router, services, subscriptions with RxJS, API integrations, and data binding.</p>
+    <p>Also, please appreciate the pleasing CSS effects. Pretty nice eh?</p> -->
+    <p>
+      <span *ngFor="let letter of textArray">{{ letter }}<div *ngIf="letter === '\n'" class="linebreak"><br></div></span>
+    </p>
 </div>
