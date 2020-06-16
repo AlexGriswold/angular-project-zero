@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { timer } from 'rxjs';
 
 import { TypewriterService } from './typewriter-service/typewriter-service.service';
 
@@ -23,6 +24,20 @@ export class FrontPageComponent {
   constructor(private _typewriterService: TypewriterService) {
     this.textSub = this._typewriterService.getTextSub(this.content).subscribe((data) => {
       this.textArray.push(data);
+    });
+  }
+
+  onLetterMouseover(event): void {
+
+
+    // console.log(event.srcElement.classList);
+    event.srcElement.classList.add('growletter');
+  }
+
+  onLetterMouseout(event): void {
+    const timerSource = timer(5000);
+    const timerSub = timerSource.subscribe((data) => {
+      event.srcElement.classList.remove('growletter');
     });
   }
 

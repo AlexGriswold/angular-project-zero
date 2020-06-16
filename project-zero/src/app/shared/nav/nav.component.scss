@@ -6,6 +6,9 @@ ul {
     // display: inline;
     margin: 0;
     padding: 20px 0;
+    position: absolute;
+    top: 0;
+    // background: none;
     &:first-child {
         padding-left: 20px;
     }
