@@ -8,6 +8,7 @@ ul {
     padding: 20px 0;
     position: absolute;
     top: 0;
+    z-index: 1;
     // background: none;
     &:first-child {
         padding-left: 20px;

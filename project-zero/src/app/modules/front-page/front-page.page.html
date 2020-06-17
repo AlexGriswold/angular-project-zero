@@ -30,5 +30,8 @@
     <p>Also, please appreciate the pleasing CSS effects. Pretty nice eh?</p> -->
     <p>
       <span *ngFor="let letter of textArray" (mouseover)="onLetterMouseover($event)" (mouseout)="onLetterMouseout($event)">{{ letter }}<div *ngIf="letter === '\n'" class="linebreak"><br></div></span>
+      <br>
+      <span [hidden]="hideGithubLink">See the code on GitHub.</span>
     </p>
+    <!-- <p>See the code for this website on GitHub.</p> -->
 </div>

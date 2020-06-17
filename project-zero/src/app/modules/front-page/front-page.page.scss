@@ -1,46 +1,38 @@
 h1, p {
     margin: 0;
-    // color: #d4d4d4;
-    // font-family: sans-serif;
     line-height: 1.4;
 }
 
 .growletter {
   font-size: 33px;
+  display: inline-block;
+  filter: blur(3px);
+      animation-name: colorchange;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
 }
 
 p {
     width: 530px;
+    height: 300px;
     margin: 20px 0;
     color: #dfdfdf;
     transition: all .33s ease-in-out;
-    &:hover {
-        // animation-name: colorchange;
-        // animation-duration: 3s;
-        // animation-iteration-count: infinite;
-        // animation-timing-function: ease-in-out;
-    }
-    &:hover {
-      // text-shadow: 2px 2px wheat;
-    }
     span {
       transition: all 1s ease-in-out;
       cursor: grab;
-      // &:hover {
-      //   animation-name: colorchange;
-      //   animation-duration: 3s;
-      //   animation-iteration-count: infinite;
-      //   animation-timing-function: ease-in-out;
-      //   // font-size: 33px;
-      //   & + span, + span + span, + span + span + span, + span + span + span + span {
-      //     animation-name: colorchange;
-      //     animation-duration: 3s;
-      //     animation-iteration-count: infinite;
-      //     animation-timing-function: ease-in-out;
-      //     // font-size: 33px;
-      //   }
-      // }
     }
+}
+
+@media only screen and (max-width: 565px) {
+  p {
+    width: auto;
+    padding: 20px;
+  }
+  .app-front-page__main-container {
+    width: 100%;
+  }
 }
 
 .linebreak {
@@ -68,17 +60,17 @@ p {
 
 
 
-
+// Bokeh effect shamelessly stolen from https://codepen.io/Mamboleoo/pen/BxMQYQ
 
 .background {
   width: 100vw;
   height: 100vh;
-  background: #3E1E68;
+  background: rgb(0, 0, 0);
   overflow: hidden;
 }
 
 $particleSize: 20vmin;
-$animationDuration: 500s;
+$animationDuration: 400s;
 $amount: 20;
 .background span {
   width: $particleSize;
@@ -91,9 +83,9 @@ $amount: 20;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   $colors: (
-    #583C87,
-    #E45A84,
-    #FFACAC
+    rgb(31, 31, 46),
+    rgb(32, 46, 31),
+    rgb(46, 31, 31)
   );
   @for $i from 1 through $amount {
     &:nth-child(#{$i}) {
