@@ -19,8 +19,8 @@ p {
     margin: 20px 0;
     color: #dfdfdf;
     transition: all .33s ease-in-out;
-    span {
-      transition: all 1s ease-in-out;
+    .individual-letter {
+      transition: all .3s ease-in-out;
       cursor: grab;
     }
 }
@@ -40,11 +40,37 @@ p {
 }
 
 .app-front-page__main-container {
-    padding: 20px;
+    margin: 20px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 20px;
+    left: 20px;
+    p {
+      margin: 0;
+    }
+    // transform: translate(-50%, -50%);
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 20px;
+  transition: all .3s ease-in-out;
+  a {
+    font-family: 'Roboto-Regular';
+    color: #dfdfdf;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline #dfdfdf;
+    }
+  }
+}
+
+.hide-link {
+  opacity: 0;
+}
+
+.show-link {
+  opacity: 1;
 }
 
 @keyframes colorchange {

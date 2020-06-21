@@ -29,9 +29,9 @@
     <p>This website was built with Angular 9. It provides an example case for lazy-loading, the router, services, subscriptions with RxJS, API integrations, and data binding.</p>
     <p>Also, please appreciate the pleasing CSS effects. Pretty nice eh?</p> -->
     <p>
-      <span *ngFor="let letter of textArray" (mouseover)="onLetterMouseover($event)" (mouseout)="onLetterMouseout($event)">{{ letter }}<div *ngIf="letter === '\n'" class="linebreak"><br></div></span>
+      <span class="individual-letter" *ngFor="let letter of textArray" (mouseover)="onLetterMouseover($event)" (mouseout)="onLetterMouseout($event)">{{ letter }}<div *ngIf="letter === '\n'" class="linebreak"><br></div></span>
       <br>
-      <span [hidden]="hideGithubLink">See the code on GitHub.</span>
+      <span [ngClass]="{'show-link': !hideGithubLink,'hide-link': hideGithubLink}" class="github-link"><a href="https://github.com/AlexGriswold/angular-project-zero">See the code on GitHub.</a></span>
     </p>
     <!-- <p>See the code for this website on GitHub.</p> -->
 </div>
