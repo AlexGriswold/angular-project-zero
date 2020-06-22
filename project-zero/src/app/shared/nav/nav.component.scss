@@ -1,21 +1,43 @@
+// a {
+//     color: #d4d4d4;
+// }
+
+// ul {
+//     // display: inline;
+//     margin: 0;
+//     padding: 20px 0;
+//     position: absolute;
+//     top: 0;
+//     z-index: 1;
+//     // background: none;
+//     &:first-child {
+//         padding-left: 20px;
+//     }
+// }
+
+// ul li {
+//     display: inline;
+//     padding: 10px;
+// }
+
 a {
-    color: #d4d4d4;
+  color: #d4d4d4;
 }
 
 ul {
-    // display: inline;
-    margin: 0;
-    padding: 20px 0;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    // background: none;
-    &:first-child {
-        padding-left: 20px;
-    }
+  // display: inline;
+  margin: 0;
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  // background: none;
+  &:first-child {
+      padding-left: 20px;
+  }
 }
 
 ul li {
-    display: inline;
-    padding: 10px;
+  display: inline;
+  padding: 10px;
 }
