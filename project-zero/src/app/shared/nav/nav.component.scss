@@ -20,24 +20,16 @@
 //     padding: 10px;
 // }
 
-a {
-  color: #d4d4d4;
-}
-
 ul {
-  // display: inline;
-  margin: 0;
-  padding: 20px 0;
+  // background: transparent;
   position: absolute;
-  top: 0;
-  z-index: 1;
-  // background: none;
-  &:first-child {
-      padding-left: 20px;
-  }
+  width: 100px;
+  margin: 0;
+  top: 20px;
+  right: 20px;
+  color: #dfdfdf;
 }
 
-ul li {
-  display: inline;
-  padding: 10px;
+img {
+  height: 100px;
 }
